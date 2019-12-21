@@ -1,0 +1,51 @@
+
+
+.main
+{
+	height:100%;
+}
+
+.vector-container
+{
+	position:relative;
+}
+
+
+img
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius:5px;
+}
+
+.brand-details
+{
+	padding-top:6.5%;
+}
+
+.brand-text
+{
+	font-family:'Indie flower', cursive;
+	font-size:4em;
+}
+
+.brand-description
+{
+	line-height: 1.8;
+	color:rgba(0,0,0,0.7);
+	font-size:1.05em;
+	font-family:'Quicksand', sans-serif;
+}
+
+a
+{
+	padding:10px;
+	font-family:'Quicksand', sans-serif;
+	background:#EA3C53;
+	border-radius: 4px;
+	width:fit-content;
+}

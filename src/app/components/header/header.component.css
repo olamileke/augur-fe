@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+a
+{
+	color:unset;
+	text-decoration: none;
+	font-family:'Quicksand', sans-serif;
+}
+
+a.login
+{
+	border-radius:15px;
+	background:#EA3C53;
+	padding:10px;
+}
+
+.brand-text
+{
+	font-family:'Indie Flower', cursive;
+	font-size:1.8em;
+}

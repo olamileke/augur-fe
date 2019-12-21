@@ -1,0 +1,14 @@
+
+.container-fluid
+{
+	height:100vh;
+	overflow: hidden;
+	background:#fff;
+}
+
+.tab-element
+{
+	position:relative;
+	/*top:1vh;*/
+	height:75vh
+}
