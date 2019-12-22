@@ -5,6 +5,7 @@ a
 	color:unset;
 	text-decoration: none;
 	font-family:'Quicksand', sans-serif;
+	z-index:9999;
 }
 
 a.login
@@ -18,4 +19,11 @@ a.login
 {
 	font-family:'Indie Flower', cursive;
 	font-size:1.8em;
+	cursor:pointer;
+	z-index:9999;
+}
+
+.header-body
+{
+	padding-right:5vw;
 }

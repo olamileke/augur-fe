@@ -6,9 +6,19 @@
 	background:#fff;
 }
 
+.container-fluid.alt-theme
+{
+	background:url('../../../assets/images/Home/mochaGrunge.png');
+}
+
 .tab-element
 {
 	position:relative;
-	/*top:1vh;*/
 	height:75vh
+}
+
+.tab-element.position-top
+{
+	top:-83px;
+	height:100vh;
 }

@@ -1,8 +1,10 @@
 
-<div class='container-fluid p-0'>
-	<app-header></app-header>
+<div class='container-fluid p-0' [class.alt-theme]='tabs.signup'>
+	<app-header (changeTab)='setActiveTab($event)' [activeTab]='activeTab'></app-header>
 
-	<div class='tab-element'>
-		<app-base></app-base>
+	<div class='tab-element' [class.position-top]='tabs.login'>
+		<app-base *ngIf='tabs.base'></app-base>
+		<app-signup *ngIf='tabs.signup'></app-signup>
+		<app-login *ngIf='tabs.login'></app-login>
 	</div>
 </div>
