@@ -6,8 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BaseComponent } from './components/base/base.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     HeaderComponent,
     BaseComponent,
-    SignupComponent,
-    LoginComponent
+    AuthComponent
   ],
   imports: [
     BrowserModule,

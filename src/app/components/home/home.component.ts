@@ -9,14 +9,20 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  tabs={base:false, signup:true, login:false};
-  activeTab='signup';
+  tabs={base:true, auth:false};
+  auth:string;
 
   ngOnInit() {
   }
 
 
   setActiveTab(tab:string) {
+
+    if(tab == 'signup' || tab == 'login') {
+
+      this.auth=tab;
+      tab = 'auth';
+    }
 
   	let tabKeys=Object.keys(this.tabs);
 
@@ -26,7 +32,6 @@ export class HomeComponent implements OnInit {
   	}
 
   	this.tabs[tab]=true;
-    this.activeTab=tab;
   }
 
 }

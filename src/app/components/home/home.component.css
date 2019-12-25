@@ -8,17 +8,11 @@
 
 .container-fluid.alt-theme
 {
-	background:url('../../../assets/images/Home/mochaGrunge.png');
+	/*background:url('../../../assets/images/Home/mochaGrunge.png');*/
 }
 
 .tab-element
 {
 	position:relative;
 	height:75vh
-}
-
-.tab-element.position-top
-{
-	top:-83px;
-	height:100vh;
 }

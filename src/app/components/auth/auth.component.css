@@ -1,0 +1,106 @@
+.main
+{
+	height:100%;
+}
+
+
+img.vector
+{
+	position: absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+
+.text-details
+{
+	padding-top:2%;
+}
+
+.advert-text
+{
+	color:rgba(0,0,0,0.7);
+	/*line-height: 1.3;*/
+	font-size: 1.1em;
+}
+
+.brand-name
+{
+	font-size:1.4em;
+	color:#EA3C53;
+}
+
+form
+{
+	position:relative;
+	top:25px;
+	height:100%;
+	border:1px solid rgba(0,0,0,0.05);
+	font-family:'Quicksand', sans-serif;
+	/*width:80%;*/
+	color:rgba(0,0,0,0.7);
+	text-transform: lowercase;
+	border-radius:7px;
+}
+
+input
+{
+	/*border:1px solid rgba(0,0,0,0.1);*/
+	width:100%;
+	padding-left:35px;
+	font-size: 0.93em;
+	color:rgba(0,0,0,0.7);
+}
+
+.form-group
+{
+	position:relative;
+}
+
+.form-group img
+{
+	position:absolute;
+	top:8px;
+	left:5px;
+	width:25px;
+	height:25px;
+}
+
+a
+{
+	color:rgba(0,0,0,0.6);
+}
+
+button
+{
+	background:#EA3C53;
+	font-size:0.9em;
+	outline:none;
+	border:none;
+	padding:8.5px 20px;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+
+.form-group
+{
+	position:relative;
+}
+
+
+.fa
+{
+	position:absolute;
+	top:11px;
+	left:10px;
+	color:rgba(0,0,0,0.7);
+}
+
+.fa-lock
+{
+	font-size: 1.1em;
+	left:11.5px;
+}
