@@ -27,3 +27,12 @@ a.login
 {
 	padding-right:5vw;
 }
+
+
+@media(max-width:768px)
+{
+	.header-body
+	{
+		color:#fff;
+	}
+}

@@ -1,15 +1,36 @@
 
 .container-fluid
 {
+	position:relative;
 	height:100vh;
 	overflow: hidden;
 	background:#fff;
+	background-size:cover !important;
 }
 
-.container-fluid.alt-theme
+
+.transparent-overlay
 {
-	/*background:url('../../../assets/images/Home/mochaGrunge.png');*/
+	position:absolute;
+	top:0;
+	left:0;
+	height:100vh;
+	width:100vw;
+	background:rgba(0,0,0,0.7);
 }
+
+
+.responsive_base_theme
+{
+	background:url("../../../assets/images/Home/investment.jpg");
+}
+
+
+.responsive_auth_theme
+{
+	background:url("../../../assets/images/Login/investmentII.jpg");
+}
+
 
 .tab-element
 {

@@ -11,8 +11,40 @@ export class HomeComponent implements OnInit {
 
   tabs={base:true, auth:false};
   auth:string;
-
+  classes:any;
+ 
   ngOnInit() {
+
+      this.setClasses();
+  }
+
+
+  setClasses() {
+
+      this.classes={responsive_base_theme:this.switchTheme(this.tabs.base), 
+              responsive_auth_theme:this.switchTheme(this.tabs.auth)};
+  }
+
+
+  checkScreenSize():boolean {
+
+      if(screen.width <= 768) {
+
+          return true;
+      }
+
+      return false;
+  }
+
+
+  switchTheme(param:boolean):boolean {
+
+      if(this.checkScreenSize() && param) {
+
+          return true;
+      }
+
+      return false;
   }
 
 
@@ -24,6 +56,7 @@ export class HomeComponent implements OnInit {
       tab = 'auth';
     }
 
+
   	let tabKeys=Object.keys(this.tabs);
 
   	for(let i=0; i < tabKeys.length ; i++) {
@@ -32,6 +65,7 @@ export class HomeComponent implements OnInit {
   	}
 
   	this.tabs[tab]=true;
+    this.setClasses();
   }
 
 }

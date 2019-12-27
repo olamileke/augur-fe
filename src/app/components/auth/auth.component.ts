@@ -42,7 +42,7 @@ export class AuthComponent implements OnInit {
 
       this.auth.signup(form.value).subscribe((res:any) => {
 
-          alert(JSON.stringify(res));
+         this.notification.showSuccessMsg(`Activate your account @${form.get('email').value}`);
       })
   }
 

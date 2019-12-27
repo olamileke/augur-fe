@@ -25,6 +25,7 @@ img
 .brand-details
 {
 	padding-top:6.5%;
+	z-index:9999;
 }
 
 .brand-text
@@ -48,4 +49,28 @@ a
 	background:#EA3C53;
 	border-radius: 4px;
 	width:fit-content;
+}
+
+
+@media(max-width:768px)
+{
+	.brand-details
+	{
+		color:#fff;
+		padding-top:0%;
+	}
+
+	.brand-description
+	{
+		color:#fff;
+	}
+}
+
+
+@media(max-width:567px)
+{
+	.brand-text
+	{
+		font-size:2.3em;
+	}
 }

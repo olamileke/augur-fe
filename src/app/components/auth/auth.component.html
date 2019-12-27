@@ -1,14 +1,14 @@
 <div class='row main d-flex justify-content-center'>
 	
-	<div class='col-10 row'>
+	<div class='col-12 col-sm-10 row d-flex justify-content-center justify-content-lg-start'>
 
-		<div class="col-6">
+		<div class="d-none d-lg-block col-6">
 			<img src="../../assets/images/Login/investmentII.jpg" class='vector'>
 		</div>
 
-		<div class='col-5 text-details pl-4'>
+		<div class='col-12 col-sm-8 col-lg-5 text-details d-flex align-items-center align-items-lg-start pl-4'>
 			
-			<form class='p-4 ml-5' *ngIf="authType == 'login'" [formGroup]='loginForm' (ngSubmit)="login(loginForm)">
+			<form class='p-4 ml-lg-5' *ngIf="authType == 'login'" [formGroup]='loginForm' (ngSubmit)="login(loginForm)">
 				<p class='brand-name mb-3 font-weight-bold'>Augur</p>
 				<p class='advert-text mb-3 font-weight-bold'>Accumulate wealth via the stock market making use of our predictive tooling</p>
 				<p class='mb-4'>Login to access your augur account</p>
@@ -27,11 +27,11 @@
 				</p>
 
 				<div class='d-flex'>
-					<button class='text-white'>Login</button>
+					<button class='text-white' type='submit' [disabled]='loginForm.invalid'>Login</button>
 				</div>
 			</form>
 
-			<form class='p-4 ml-5' *ngIf="authType == 'signup'" [formGroup]="signupForm" (ngSubmit)="signup(signupForm)">
+			<form class='p-4 ml-lg-5' *ngIf="authType == 'signup'" [formGroup]="signupForm" (ngSubmit)="signup(signupForm)">
 				<p class='brand-name mb-3 font-weight-bold'>Augur</p>
 				<p class='advert-text mb-3 font-weight-bold'>Begin your journey to greater success gaming the market</p>
 				<p class='mb-4'>signup to augur</p>

@@ -104,3 +104,45 @@ button
 	font-size: 1.1em;
 	left:11.5px;
 }
+
+
+@media(max-width:768px)
+{
+	.brand-name
+	{
+		color:#fff;
+	}
+
+	form
+	{
+		color:#fff;
+		height:unset;
+		background:rgba(0,0,0,0.05);
+		border-color:transparent;
+	}
+
+	.advert-text
+	{
+		color:#fff;
+	}
+
+	a
+	{
+		color:#fff;
+	}
+}
+
+
+@media(max-width:768px)
+{
+	form
+	{
+		background:rgba(0,0,0,0.15);
+	}
+
+	.advert-text
+	{
+		font-size:1em;
+		border-radius:3px;
+	}
+}
