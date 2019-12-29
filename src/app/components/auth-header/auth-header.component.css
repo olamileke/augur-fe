@@ -1,0 +1,58 @@
+
+.header-body
+{
+	border-bottom:1px solid rgba(0,0,0,0.03);
+	padding-left:2.5%;
+	padding-right:2.5%;
+}
+
+
+.brand-name
+{
+	font-family:'Quicksand', sans-serif;
+	color:#EA3C53;
+	font-size:1.2em;
+}
+
+
+.search-parent
+{
+	position:relative;
+	left:10%;
+	font-family:'Quicksand', sans-serif;
+}
+
+.search-parent img
+{
+	position:relative;
+	top:2px;
+	width:25px;
+	height:25px;
+}
+
+input
+{
+	border-color:transparent;
+	outline:none;
+	color:rgba(0,0,0,0.5);
+}
+
+input::placeholder
+{
+	color:rgba(0,0,0,0.5);
+}
+
+
+.header-profile img
+{
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+	border:1px solid rgba(0,0,0,0.5);
+	object-fit: cover;
+}
+
+.header-profile p
+{
+	font-family:unset;
+}

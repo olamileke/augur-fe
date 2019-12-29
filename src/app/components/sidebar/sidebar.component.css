@@ -1,0 +1,61 @@
+
+.sidebar-body
+{
+	padding-top:9vh;
+	padding-left:2.5vw;
+	font-family:'Raleway', sans-serif;
+}
+
+.title-text img
+{
+	width:25px;
+	height:25px;
+	object-fit: cover;
+}
+
+.header-text
+{
+	font-size:0.9em;
+}
+
+ul
+{
+	font-family:'Quicksand', sans-serif;
+}
+
+ul img
+{
+	position: relative;
+	top:-1px;
+	width:12px;
+	height:12px;
+	object-fit: cover;
+}
+
+ul li
+{
+	cursor: pointer;
+}
+
+.tab
+{
+	position:relative;
+	left:0;
+	transition:all 0.4s ease-out;
+}
+
+.tab.active
+{
+	color:#EA3C53 !important;
+}
+
+.tab:hover
+{
+	left:5px;
+	color:rgba(0,0,0,0.75);
+}
+
+i
+{
+	color:#fff;
+}

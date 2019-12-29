@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthHomeComponent implements OnInit {
 
+  tabs = {explore:true, followed_stocks:false, predictions:false};
+
   constructor() { }
 
   ngOnInit() {

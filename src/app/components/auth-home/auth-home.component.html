@@ -1,3 +1,17 @@
-<p>
-  auth-home works!
-</p>
+
+<div class='container-fluid p-0'>
+	<app-auth-header></app-auth-header>
+
+	<div class='row'>
+		<div class='col-3'>
+			<app-sidebar></app-sidebar>
+		</div>
+		<div class='col-9 main-content'>
+			<app-explore *ngIf='tabs.explore'></app-explore>
+			<app-followed-stocks *ngIf='tabs.followed-stocks'></app-followed-stocks>
+			<app-predictions *ngIf='tabs.predictions'></app-predictions>
+		</div>
+	</div>	
+</div>
+
+

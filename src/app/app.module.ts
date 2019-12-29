@@ -14,6 +14,12 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LoadComponent } from './components/load/load.component';
 import { HttpInterceptors } from './interceptors/http.interceptors';
 import { AuthHomeComponent } from './components/auth-home/auth-home.component';
+import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ExploreComponent } from './components/explore/explore.component';
+import { FollowedStocksComponent } from './components/followed-stocks/followed-stocks.component';
+import { PredictionsComponent } from './components/predictions/predictions.component';
+import { StockComponent } from './components/stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { AuthHomeComponent } from './components/auth-home/auth-home.component';
     BaseComponent,
     AuthComponent,
     LoadComponent,
-    AuthHomeComponent
+    AuthHomeComponent,
+    AuthHeaderComponent,
+    SidebarComponent,
+    ExploreComponent,
+    FollowedStocksComponent,
+    PredictionsComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,
