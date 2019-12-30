@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { StocksService } from '../../services/stocks.service';
 
 @Component({
@@ -8,14 +8,24 @@ import { StocksService } from '../../services/stocks.service';
 })
 export class ExploreComponent implements OnInit {
 
+  @Output() viewStock = new EventEmitter();
+  exploredStocks:any;
+
   constructor(private stocks:StocksService) { }
 
   ngOnInit() {
 
   	this.stocks.explore().subscribe((res:any) => {
 
-  		console.log(res.data);
+  		this.exploredStocks=res.data;
   	})
   }
+
+
+  emitStockDetail(symbol:string):void {
+
+    this.viewStock.emit(symbol);
+  }
+
 
 }

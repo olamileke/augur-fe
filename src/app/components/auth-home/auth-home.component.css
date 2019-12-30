@@ -7,5 +7,31 @@
 
 .main-content
 {
-	padding-top:6%;
+	padding-top:3%;
+}
+
+.header-content
+{
+	font-family:'Quicksand', sans-serif;
+	border-bottom:1px solid rgba(0,0,0,0.03);
+}
+
+
+.date
+{
+	font-size:1.2em;
+	font-family:'Raleway', sans-serif;
+}
+
+.time
+{
+	font-size:1.1em;
+}
+
+.open-close
+{
+	position: relative;
+	top:-7px;
+	background:#EA3C53;
+	border-radius:10px;
 }

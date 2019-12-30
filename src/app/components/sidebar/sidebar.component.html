@@ -7,14 +7,14 @@
 
 
 	<ul class='list-unstyled'>
-		<li class='d-flex mb-4'>
-			<p class='m-0 text-muted tab active'>Explore</p>
+		<li class='d-flex mb-4' (click)="emitChange('explore')">
+			<p class='m-0 text-muted tab active' [class.active]='tabs.explore'>Explore</p>
 		</li>
-		<li class='d-flex mb-4'>
-			<p class='m-0 text-muted tab'>Followed Stocks</p>
+		<li class='d-flex mb-4' (click)="emitChange('followed_stocks')">
+			<p class='m-0 text-muted tab' [class.active]='tabs.followed_stocks'>Followed Stocks</p>
 		</li>
-		<li class='d-flex mb-4'>
-			<p class='m-0 text-muted tab'>Predictions</p>
+		<li class='d-flex mb-4' (click)="emitChange('predictions')">
+			<p class='m-0 text-muted tab' [class.active]='tabs.predictions'>Predictions</p>
 		</li>
 		<li class='d-flex mb-4'>
 			<p class='m-0 text-muted tab'>Update</p>

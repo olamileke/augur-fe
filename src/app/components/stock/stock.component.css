@@ -1,0 +1,25 @@
+
+:host
+{
+	width:100%;
+	font-family:'Quicksand', sans-serif;
+}
+
+.stock-parent
+{
+	background:url("/assets/images/Stock/noisy_net.png");	
+	height:210px;
+	margin-bottom:30px;
+	font-size:0.9em;
+}
+
+.symbol
+{
+	font-size:1em;
+}
+
+
+.price
+{
+	font-size:1.35em;
+}

@@ -20,6 +20,7 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { FollowedStocksComponent } from './components/followed-stocks/followed-stocks.component';
 import { PredictionsComponent } from './components/predictions/predictions.component';
 import { StockComponent } from './components/stock/stock.component';
+import { StockDetailComponent } from './components/stock-detail/stock-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { StockComponent } from './components/stock/stock.component';
     ExploreComponent,
     FollowedStocksComponent,
     PredictionsComponent,
-    StockComponent
+    StockComponent,
+    StockDetailComponent
   ],
   imports: [
     BrowserModule,

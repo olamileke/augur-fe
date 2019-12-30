@@ -44,15 +44,16 @@ ul li
 	transition:all 0.4s ease-out;
 }
 
-.tab.active
-{
-	color:#EA3C53 !important;
-}
 
 .tab:hover
 {
 	left:5px;
 	color:rgba(0,0,0,0.75);
+}
+
+.tab.active:hover
+{
+	left:0px;
 }
 
 i

@@ -3,15 +3,28 @@
 	<app-auth-header></app-auth-header>
 
 	<div class='row'>
-		<div class='col-3'>
-			<app-sidebar></app-sidebar>
+		<div class='col-auto'>
+			<app-sidebar (changeTab)="setActiveTab($event)"></app-sidebar>
 		</div>
-		<div class='col-9 main-content'>
-			<app-explore *ngIf='tabs.explore'></app-explore>
-			<app-followed-stocks *ngIf='tabs.followed-stocks'></app-followed-stocks>
+		<div class='offset-1'></div>
+		<div class='col-8 main-content px-5'>
+			<div class='header-content d-flex justify-content-between align-items-center mb-3' *ngIf='!tabs.viewStock'>
+				<div class='date-time'>
+					<p class='date mb-3'>{{ date }}</p>
+					<p class='time text-muted'>{{ time }}</p>
+				</div>
+
+				<div class='open-close p-2 text-white'>open</div>
+			</div>
+			<app-explore *ngIf='tabs.explore' (viewStock)='viewStockDetail($event)'></app-explore>
+			<app-followed-stocks *ngIf='tabs.followed_stocks'></app-followed-stocks>
 			<app-predictions *ngIf='tabs.predictions'></app-predictions>
+			<app-stock-detail *ngIf='tabs.viewStock' [symbol]='viewedSymbol'></app-stock-detail>
 		</div>
 	</div>	
 </div>
+
+<app-load [class.active]='isLoading | async'></app-load>
+
 
 
