@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+
+.stock-container
+{
+	font-family:'Raleway', sans-serif;
+}
+
+.stock-name
+{
+	font-family:'Kulim Park', sans-serif;
+	font-size:1.45em;
+}
+
+.regular_market_price
+{
+	font-size:1.25em;
+}
+
+.summary
+{
+	font-family:'Quicksand', sans-serif;
+}
+
+
+button
+{
+	position:relative;
+	outline:none;
+	border:none;
+	font-family:'Quicksand', sans-serif;
+	cursor:pointer;
+}
+
+.follow
+{
+	width:fit-content;
+	border-radius:4px;
+	font-size:0.9em;
+}
+
+.predict
+{
+	top:-13.5px;
+	height:fit-content;
+	background:#EA3C53;
+	border-radius:10px;
+}
+
+

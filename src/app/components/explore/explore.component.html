@@ -2,7 +2,7 @@
 
 <div class='row explore-parent'>
 	
-	<div class='col-4' *ngFor="let stock of exploredStocks" (click)="emitStockDetail(stock.symbol)">
+	<div class='col-4' *ngFor="let stock of exploredStocks" (click)="emitStockDetail(stock.symbol, stock.close)">
 		<app-stock [stock]="stock"></app-stock>
 	</div>
 </div>

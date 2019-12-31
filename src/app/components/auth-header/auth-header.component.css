@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 .header-body
 {
@@ -54,5 +55,5 @@ input::placeholder
 
 .header-profile p
 {
-	font-family:unset;
+	font-family:'Noto Sans', sans-serif;
 }

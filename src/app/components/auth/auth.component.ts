@@ -51,7 +51,7 @@ export class AuthComponent implements OnInit {
 
       this.auth.login(form.value).subscribe((res:any) => {
 
-          localStorage.augur_user=res.user.replace(/\\/g, "");
+          localStorage.augur_user=JSON.stringify(res.user);
           this.router.navigate(['/dashboard']);
           this.notification.showSuccessMsg('Login successful');
       })

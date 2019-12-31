@@ -1,2 +1,21 @@
 
-{{ symbol }}
+<div class='stock-container' *ngIf='dataFetched'>
+	<div class='stock-header d-flex row'>
+		<div class='d-flex flex-column col-7 mr-auto'>
+			<p class='m-0 mb-2 stock-name'>{{ stock.longName }}</p>
+			<div class='stock-info d-flex align-items-center mb-2'>
+				<p class='mb-0 regular_market_price mr-2'>{{ stock_info.currentPrice | number:'1.2-2' }}</p>
+				<p class='m-0' *ngIf='stock.priceChange > 0' style='color:green;'>+{{ stock.priceChange | number:'1.2-2' }}</p>
+				<p class='m-0' *ngIf='stock.priceChange < 0' style='color:#EA3C53;'>{{ stock.priceChange | number:'1.2-2' }}</p>
+			</div>
+			<div class='summary mb-2'>
+				{{ stock.longBusinessSummary | slice:0:100 }}...
+			</div>
+			<button class='follow p-2' (click)='followStock()' *ngIf='!following'>Follow</button>
+			<button class='follow p-2' (click)='followStock()' *ngIf='following'>Following</button>
+		</div>
+		<div class='col-3 d-flex align-items-center justify-content-end'>
+			<button class='predict text-white p-2'>Predict</button>
+		</div>
+	</div>
+</div>

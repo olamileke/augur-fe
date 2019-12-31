@@ -22,9 +22,10 @@ export class ExploreComponent implements OnInit {
   }
 
 
-  emitStockDetail(symbol:string):void {
+  emitStockDetail(symbol:string, currentPrice:number):void {
 
-    this.viewStock.emit(symbol);
+    let stock_info = {symbol:symbol, currentPrice:currentPrice};
+    this.viewStock.emit(stock_info);
   }
 
 

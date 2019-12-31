@@ -18,7 +18,7 @@ export class AuthHomeComponent implements OnInit {
   date:string;
   time:string;
   timeFunc=interval(1000);
-  viewedSymbol:string;
+  stock_info:any;
 
   isLoading:Subject<boolean> = this.load.isLoading;
 
@@ -97,10 +97,10 @@ export class AuthHomeComponent implements OnInit {
   	}
 
 
-    viewStockDetail(symbol:string) {
+    viewStockDetail(stock_info:any) {
 
         this.setActiveTab('viewStock');
-        this.viewedSymbol = symbol;
+        this.stock_info = stock_info;
     }
 
 }
