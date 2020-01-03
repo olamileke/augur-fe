@@ -1,21 +1,101 @@
-
-<div class='stock-container' *ngIf='dataFetched'>
-	<div class='stock-header d-flex row'>
-		<div class='d-flex flex-column col-7 mr-auto'>
+ 
+<div class='stock-container' *ngIf='dataFetched' [class.notif]='unfollow_prompt'>
+	<div class='stock-header d-flex row mb-4'>
+		<div class='d-flex flex-column col-8 mr-auto'>
 			<p class='m-0 mb-2 stock-name'>{{ stock.longName }}</p>
 			<div class='stock-info d-flex align-items-center mb-2'>
 				<p class='mb-0 regular_market_price mr-2'>{{ stock_info.currentPrice | number:'1.2-2' }}</p>
 				<p class='m-0' *ngIf='stock.priceChange > 0' style='color:green;'>+{{ stock.priceChange | number:'1.2-2' }}</p>
 				<p class='m-0' *ngIf='stock.priceChange < 0' style='color:#EA3C53;'>{{ stock.priceChange | number:'1.2-2' }}</p>
 			</div>
-			<div class='summary mb-2'>
-				{{ stock.longBusinessSummary | slice:0:100 }}...
+			<div class='text-muted mb-2'>
+				{{ stock.longBusinessSummary | slice:0:130 }}...
 			</div>
-			<button class='follow p-2' (click)='followStock()' *ngIf='!following'>Follow</button>
-			<button class='follow p-2' (click)='followStock()' *ngIf='following'>Following</button>
+			<button class='follow p-2' (click)='follow()' *ngIf='!following'>Follow</button>
+			<button class='follow p-2' (click)='promptUnfollow()' *ngIf='following'>Following</button>
 		</div>
-		<div class='col-3 d-flex align-items-center justify-content-end'>
+		<div class='col-4 d-flex align-items-center justify-content-end'>
 			<button class='predict text-white p-2'>Predict</button>
+		</div>
+	</div>
+
+	<div class='relevant-info row px-4 mb-3 pr-2'>
+		<div class='col-4 row py-2 pl-2 pr-5'>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>OPEN</p>
+				<p class='m-0 tag-content'>{{ stock.regularMarketPrice }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>HIGH</p>
+				<p class='m-0 tag-content'>{{ stock.dayHigh }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>LOW</p>
+				<p class='m-0 tag-content'>{{ stock.dayLow }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>MKT CAP</p>
+				<p class='m-0 tag-content'>{{ stock.marketCap }}</p>
+			</div>
+		</div>
+		<div class='col-4 row py-2'>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>DIV YIELD</p>
+				<p class='m-0 tag-content'>{{ stock.dividendYield }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>PREV CLOSE</p>
+				<p class='m-0 tag-content'>{{ stock.regularMarketPreviousClose }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>52-WK HIGH</p>
+				<p class='m-0 tag-content'>{{ stock.fiftyTwoWeekHigh }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>52-WK LOW</p>
+				<p class='m-0 tag-content'>{{ stock.fiftyTwoWeekLow }}</p>
+			</div>
+		</div>
+		<div class='col-4 row py-2'>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>PAYOUT RATIO</p>
+				<p class='m-0 tag-content'>{{ stock.payoutRatio }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>SHORT RATIO</p>
+				<p class='m-0 tag-content'>{{ stock.shortRatio }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>VOLUME</p>
+				<p class='m-0 tag-content'>{{ stock.volume }}</p>
+			</div>
+			<div class='col-6 p-0 mb-3 d-flex flex-column'>
+				<p class='m-0 text-muted tag-line'>QUOTE TYPE</p>
+				<p class='m-0 tag-content'>{{ stock.quoteType }}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class='mb-3 d-flex justify-content-end'>
+		<select class='form-control-sm custom-select'>
+			<option>Current Day</option>
+			<option>Last 5 days</option>
+			<option>Last Month</option>
+		</select>
+	</div>
+
+	<div class='mb-3'>
+		<canvas baseChart [chartType]='chartType' [labels]='chartLabels' [datasets]='chartDataset' [colors]='chartColors' [options]='chartOptions'></canvas>
+	</div>
+</div>
+
+<div class='prompt' [class.active]='unfollow_prompt' *ngIf='dataFetched'>
+	<div class='prompt-notif p-3 d-flex flex-column'>
+		<p class='m-0 mb-2 text-center'><b>Unfollow {{ stock.longName }}?</b></p>
+		<p class='mb-3 text-center notif-msg text-muted'>You will not be able to access its stock information as easily on this platform anymore</p>
+		<div class='d-flex justify-content-center'>
+			<button class='mr-3 p-2' (click)='unfollow(false)'>Cancel</button>
+			<button class='p-2 active' (click)='unfollow(true)'>Unfollow</button>
 		</div>
 	</div>
 </div>

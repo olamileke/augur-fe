@@ -1,0 +1,25 @@
+
+
+.follow-parent
+{
+	height:65vh;
+	overflow-y: auto;
+	cursor:pointer;
+}
+
+
+.follow-parent::-webkit-scrollbar
+{
+	width:4px;
+	background:rgba(0,0,0,0.05);
+}
+
+.follow-parent::-webkit-scrollbar-thumb
+{
+	background:rgba(0,0,0,0.25);
+}
+
+.follow-parent::-webkit-scrollbar-track
+{
+	background:rgba(0,0,0,0.01);
+}

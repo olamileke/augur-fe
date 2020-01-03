@@ -17,7 +17,7 @@
 				<div class='open-close p-2 text-white'>open</div>
 			</div>
 			<app-explore *ngIf='tabs.explore' (viewStock)='viewStockDetail($event)'></app-explore>
-			<app-followed-stocks *ngIf='tabs.followed_stocks'></app-followed-stocks>
+			<app-followed-stocks *ngIf='tabs.followed_stocks' (viewStock)='viewStockDetail($event)'></app-followed-stocks>
 			<app-predictions *ngIf='tabs.predictions'></app-predictions>
 			<app-stock-detail *ngIf='tabs.viewStock' [stock_info]='stock_info'></app-stock-detail>
 		</div>

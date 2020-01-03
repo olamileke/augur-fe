@@ -9,6 +9,9 @@ import { environment } from '../../environments/environment';
 })
 export class StocksService {
 
+  exploredStocks = [];
+  stocksFollowed = [];  
+
   constructor(private http:HttpClient) { }
 
 
@@ -29,6 +32,21 @@ export class StocksService {
   follow(symbol:string):Observable<any> {
 
       const URL = environment.api_url + `follow/${symbol}`;
+      return this.http.get(URL); 
+  }
+
+
+  unfollow(symbol:string):Observable<any> {
+
+      const URL = environment.api_url + `unfollow/${symbol}`;
+      return this.http.get(URL); 
+  }
+
+
+
+  followedStocks():Observable<any> {
+
+      const URL = environment.api_url + 'stock/followed';
       return this.http.get(URL); 
   }
 }

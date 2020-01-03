@@ -1,3 +1,7 @@
-<p>
-  followed-stocks works!
-</p>
+
+<div class='row follow-parent'>
+	
+	<div class='col-4' *ngFor="let stock of followedStocks" (click)="emitStockDetail(stock.symbol, stock.close)">
+		<app-stock [stock]="stock"></app-stock>
+	</div>
+</div>

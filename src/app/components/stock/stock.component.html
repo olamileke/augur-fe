@@ -1,10 +1,13 @@
 
 <div class='stock-parent text-white p-3 d-flex flex-column'>
 	<p class='m-0 mb-2 symbol'> {{ stock.symbol }} </p>
-	<p class='price mr-2 mb-2'>{{ stock.close | number:'1.2-2' }}</p>
-	<div class='d-flex align-items-center'>
+	<p class='price mr-2 mb-3'>{{ stock.close | number:'1.2-2' }}</p>
+	<div class='d-flex align-items-center mb-4'>
 		<i class='fa fa-arrow-up mr-2' *ngIf="stock.direction == 'up'"></i>
 		<i class='fa fa-arrow-down mr-2' *ngIf="stock.direction == 'down'"></i>
 		<p class='m-0 priceChange'>{{ stock.priceChange | number:'1.2-2' }}</p>		
+	</div>
+	<div>
+		<canvas baseChart [chartType]='chartType' [labels]='chartLabels' [datasets]='chartDataset' [colors]='chartColors' [options]='chartOptions'></canvas>
 	</div>
 </div>

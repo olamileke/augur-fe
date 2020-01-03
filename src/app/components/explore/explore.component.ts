@@ -15,10 +15,35 @@ export class ExploreComponent implements OnInit {
 
   ngOnInit() {
 
-  	this.stocks.explore().subscribe((res:any) => {
+    this.getStocks();  	
+  }
 
-  		this.exploredStocks=res.data;
-  	})
+
+  getStocks() {
+
+      if(!this.checkStocksExists()) {
+
+          this.stocks.explore().subscribe((res:any) => {
+
+              this.exploredStocks = res.data;
+              this.stocks.exploredStocks =  res.data;
+          })
+      }
+      else {
+
+          this.exploredStocks = this.stocks.exploredStocks;
+      }
+  }
+
+
+  checkStocksExists():boolean {
+
+      if(this.stocks.exploredStocks.length > 0) {
+
+          return true;
+      }
+
+      return false;
   }
 
 
