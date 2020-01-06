@@ -77,7 +77,7 @@
 	</div>
 
 	<div class='mb-3 d-flex justify-content-end'>
-		<select class='form-control-sm custom-select'>
+		<select class='form-control-sm custom-select' (change)='changeGraph($event)'>
 			<option>Current Day</option>
 			<option>Last 5 days</option>
 			<option>Last Month</option>

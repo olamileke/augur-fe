@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { NotificationService } from '../../services/notification.service';
+import { StocksService } from '../../services/stocks.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +14,8 @@ export class SidebarComponent implements OnInit {
   @Output() changeTab = new EventEmitter();
   tabs = {explore:true, followed_stocks:false, predictions:false};
 
-  constructor(private router:Router, private notification:NotificationService) { }
+  constructor(private router:Router,
+              private notification:NotificationService, private stocks:StocksService) { }
 
   ngOnInit() {
   }
@@ -42,6 +44,8 @@ export class SidebarComponent implements OnInit {
   logout() {
 
   	localStorage.removeItem('augur_user');
+    this.stocks.exploredStocks = [];
+    this.stocks.stocksFollowed = [];
   	this.router.navigate(['/']);
   	this.notification.showSuccessMsg('Logout successful!');
   }
